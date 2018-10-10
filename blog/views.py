@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
+from .models import Publicacion
 
-# Create your views here.
+
+def listado(request):
+    posts = Publicacion.objects.filter(fecha_creacion__lte = timezone.now()).order_by('fecha_creacion')
+    return render(request, 'blog/listar.html', {'posts': posts})

@@ -1,6 +1,7 @@
 from django.db import models
-
+from django.shortcuts import render
 from django.utils import timezone
+
 
 class Publicacion(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
