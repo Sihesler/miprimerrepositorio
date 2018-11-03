@@ -6,7 +6,6 @@
       <div class="date">
         {{ post.fecha_creacion }}
       </div>
-      <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"> Eliminar </a>
       <h1><a href="{% url 'detalle' pk=post.pk %}">{{ post.titulo }}</a></h1>
       <p>{{ post.texto|linebreaksbr }}</p>
     </div>
