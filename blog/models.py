@@ -13,8 +13,12 @@ class Publicacion(models.Model):
             blank=True, null=True)
 
     def publicar(self):
-        self.fecha_publicacion = timezone.now()
+        self.fecha_creacion = timezone.now()
         self.save()
+
+    def eliminar(self):
+        self.fecha_creacion = timezone.now()
+        self.delete()
 
     def __str__(self): #sirve cual de todos los cambios me muestra los resumenes
         return self.titulo
